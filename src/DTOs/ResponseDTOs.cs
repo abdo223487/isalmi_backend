@@ -30,3 +30,6 @@ public record PendingConversationResponse(int Id, int CustomerId, string Status,
 public record ActiveConversationResponse(int Id, int CustomerId, int? AdminId, string Status, string CreatedAt, string UpdatedAt);
 public record MyConversationResponse(int Id, string Status, string CreatedAt, string UpdatedAt);
 public record ChatMessageResponse(int Id, int SenderId, string SenderRole, string Message, string CreatedAt);
+
+// ── Podcast
+public record PodcastResponse(int Id, string Title, string YoutubeUrl, string? Description, string CreatedAt);

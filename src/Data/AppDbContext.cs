@@ -14,6 +14,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Sira> Siras => Set<Sira>();
     public DbSet<ChatConversation> ChatConversations => Set<ChatConversation>();
     public DbSet<ChatMessage> ChatMessages => Set<ChatMessage>();
+    public DbSet<Podcast> Podcasts => Set<Podcast>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -93,6 +94,13 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             e.ToTable("chat_messages");
             e.HasKey(x => x.Id);
             e.HasIndex(x => x.ConversationId);
+        });
+
+        // Podcast
+        modelBuilder.Entity<Podcast>(e =>
+        {
+            e.ToTable("podcasts");
+            e.HasKey(x => x.Id);
         });
     }
 }

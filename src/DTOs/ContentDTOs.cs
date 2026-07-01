@@ -15,3 +15,7 @@ public record UpdateHadithRequest(string Content);
 // ── Sira
 public record AddSirasRequest(List<string> Contents);
 public record UpdateSiraRequest(string Content);
+
+// ── Podcast
+public record AddPodcastRequest(string Title, string YoutubeUrl, string? Description);
+public record UpdatePodcastRequest(string? Title, string? YoutubeUrl, string? Description);
